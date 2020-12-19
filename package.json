@@ -1,6 +1,6 @@
 {
-  "name": "capstone-client",
-  "homepage": "https://jasmineked.github.io/capstone-client",
+  "name": "jke-capstone",
+  "homepage": "https://jasmineked.github.io/capstone-react-client",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
