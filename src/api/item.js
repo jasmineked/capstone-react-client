@@ -35,7 +35,7 @@ export const showItem = (user, itemId) => {
   })
 }
 
-//INDEX
+// INDEX
 export const indexItem = (user) => {
   return axios({
     method: 'GET',
