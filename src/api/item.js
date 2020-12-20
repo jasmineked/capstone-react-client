@@ -34,3 +34,14 @@ export const showItem = (user, itemId) => {
     }
   })
 }
+
+//INDEX
+export const indexItem = (user) => {
+  return axios({
+    method: 'GET',
+    url: apiUrl + '/items',
+    headers: {
+      'Authorization': `Token Token=${user.token}`
+    }
+  })
+}
