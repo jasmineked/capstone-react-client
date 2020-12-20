@@ -11,6 +11,7 @@ import SignOut from './components/Auth/SignOut'
 import ChangePassword from './components/Auth/ChangePassword'
 import CreateItem from './components/Items/Create'
 import DestroyItem from './components/Items/Destroy'
+import IndexItem from './components/Items/IndexItem'
 
 class App extends Component {
   constructor () {
@@ -72,6 +73,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/items/:id' render={() => (
             <DestroyItem msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/items' render={() => (
+            <IndexItem msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>
