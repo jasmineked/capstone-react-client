@@ -11,7 +11,7 @@ import SignOut from './components/Auth/SignOut'
 import ChangePassword from './components/Auth/ChangePassword'
 import CreateItem from './components/Items/Create'
 import DestroyItem from './components/Items/Destroy'
-import IndexItem from './components/Items/IndexItem'
+import IndexItem from './components/Items/Index'
 
 class App extends Component {
   constructor () {
