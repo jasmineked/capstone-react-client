@@ -1,12 +1,13 @@
 import React, { Component, Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
+
 import { indexItem } from '../../api/item'
 
 class IndexItem extends Component {
   constructor () {
     super()
     this.state = {
-      idArray: []
+      itemArray: []
     }
   }
   componentDidMount () {
@@ -15,7 +16,7 @@ class IndexItem extends Component {
     indexItem(user)
       .then(res => {
         console.log(res)
-        this.setState({ idArray: res.data.items })
+        this.setState({ itemArray: res.data.items })
       })
       .then(() => {
         msgAlert({
@@ -46,10 +47,10 @@ class IndexItem extends Component {
       return (
         <div>
           {this.state.itemArray.map(item => (
-            <Fragment key={item._id}>
+            <Fragment key={item.id}>
               <h2>{item.name}</h2>
               <p></p>
-              <Link to={`/items/${item._id}`}>See more</Link>
+              <Link to={`/items/${item.id}`}>See more</Link>
             </Fragment>
           ))}
         </div>

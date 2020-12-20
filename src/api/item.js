@@ -25,10 +25,10 @@ export const deleteItem = (user, itemId) => {
 }
 
 // show req
-export const showItem = (user, itemId) => {
+export const showItem = (user, item) => {
   return axios({
     method: 'GET',
-    url: apiUrl + '/items/' + itemId,
+    url: apiUrl + '/items/' + item.id,
     headers: {
       'Authorization': `Token token=${user.token}`
     }
@@ -41,7 +41,7 @@ export const indexItem = (user) => {
     method: 'GET',
     url: apiUrl + '/items',
     headers: {
-      'Authorization': `Token Token=${user.token}`
+      'Authorization': `Token token=${user.token}`
     }
   })
 }
