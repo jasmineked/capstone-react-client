@@ -9,7 +9,7 @@ class IndexItem extends Component {
       idArray: []
     }
   }
-   componentDidMount () {
+  componentDidMount () {
     const { user, msgAlert } = this.props
 
     indexItem(user)
@@ -26,7 +26,7 @@ class IndexItem extends Component {
       })
       .catch(err => {
         msgAlert({
-          heading:'Index Failed :(',
+          heading: 'Index Failed :(',
           message: 'error: ' + err.message,
           variant: 'danger'
         })
@@ -46,14 +46,14 @@ class IndexItem extends Component {
       return (
         <div>
           {this.state.itemArray.map(item => (
-            <Fragment key={item._id}
+            <Fragment key={item._id}>
               <h2>{item.name}</h2>
               <p></p>
               <Link to={`/items/${item._id}`}>See more</Link>
             </Fragment>
           ))}
-          </div>
-          )
+        </div>
+      )
     }
   }
 }
