@@ -53,7 +53,7 @@ class CreateItem extends Component {
     }
     render () {
       if (this.state.createdId) {
-        return <Redirect to='/home/'/>
+        return <Redirect to='/items/'/>
       }
       return (
         <React.Fragment>
