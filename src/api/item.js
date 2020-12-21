@@ -45,3 +45,15 @@ export const indexItem = (user) => {
     }
   })
 }
+
+// update
+export const updateItem = (user, data, itemId) => {
+  return axios({
+    url: apiUrl + '/items/' + itemId,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    },
+    data: { item: itemId }
+  })
+}
