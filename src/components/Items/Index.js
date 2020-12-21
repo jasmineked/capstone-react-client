@@ -47,10 +47,10 @@ class IndexItem extends Component {
       return (
         <div>
           {this.state.itemArray.map(item => (
-            <Fragment key={item.id}>
+            <Fragment key={item._id}>
               <h2>{item.name}</h2>
               <p></p>
-              <Link to={`/items/${item.id}`}>See more</Link>
+              <Link to={`/items/${item._id}`}>See more</Link>
             </Fragment>
           ))}
         </div>

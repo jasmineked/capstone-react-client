@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Link, withRouter } from 'react-router-dom'
-import { deleteItem, showItem } from '../../api/item'
+import { showItem, deleteItem } from '../../api/item'
+
 import Button from 'react-bootstrap/Button'
 
 const DestroyItem = (props) => {
@@ -13,7 +14,6 @@ const DestroyItem = (props) => {
   useEffect(() => {
     // runs just once on mount
     // const { id } = props.match.params
-
     showItem(user, match.params.id)
       .then(res => {
         setItem(res.data.item)
@@ -21,7 +21,7 @@ const DestroyItem = (props) => {
       .then(() => {
         msgAlert({
           heading: 'oooooh ur item is showing!ol',
-          message: 'See Items? Good.',
+          message: 'See Item? Good.',
           variant: 'success'
         })
       })
@@ -59,7 +59,7 @@ const DestroyItem = (props) => {
       {item ? (
         <div>
           <h2>{item.name}</h2>
-          <Button onClick={handleDelete}Delete></Button>
+          <Button onClick={handleDelete}Delete>delete</Button>
           <Link to={'/update-items/' + item.id}>Update Item</Link>
         </div>
       ) : 'Loading...please...please wait'
