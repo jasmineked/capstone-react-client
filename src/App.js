@@ -12,6 +12,7 @@ import ChangePassword from './components/Auth/ChangePassword'
 import CreateItem from './components/Items/Create'
 import DestroyItem from './components/Items/Destroy'
 import IndexItem from './components/Items/Index'
+import UpdateItem from './components/Items/Update'
 
 class App extends Component {
   constructor () {
@@ -76,6 +77,9 @@ class App extends Component {
           )} />
           <AuthenticatedRoute user={user} path='/items' render={() => (
             <IndexItem msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/update-items/:id' render={() => (
+            <UpdateItem msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

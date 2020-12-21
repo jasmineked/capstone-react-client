@@ -47,13 +47,13 @@ export const indexItem = (user) => {
 }
 
 // update
-export const updateItem = (user, data, itemId) => {
+export const updateItem = (user, item, itemId) => {
   return axios({
     url: apiUrl + '/items/' + itemId,
-    method: 'DELETE',
+    method: 'PATCH',
     headers: {
       'Authorization': `Token token=${user.token}`
     },
-    data: { item: itemId }
+    data: { item: item }
   })
 }

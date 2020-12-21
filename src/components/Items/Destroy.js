@@ -60,7 +60,7 @@ const DestroyItem = (props) => {
         <div>
           <h2>{item.name}</h2>
           <Button onClick={handleDelete}Delete>delete</Button>
-          <Link to={'/update-items/' + item.id}>Update Item</Link>
+          <Link to={'/update-items/' + item._id}>Update Item</Link>
         </div>
       ) : 'Loading...please...please wait'
       }

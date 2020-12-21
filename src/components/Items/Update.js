@@ -1,16 +1,17 @@
-import React, { userState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import { withRouter, Redirect } from 'react-router-dom'
 import { showItem, updateItem } from '../../api/item'
 
-import Form, Button from 'react-bootstrap/button'
+import Button from 'react-bootstrap/Button'
+import Form from 'react-bootstrap/Form'
 
 const UpdateItem = (props) => {
-  const [profile, setProfile] = useState({ username: '' })
+  const [item, setItem] = useState({ name: '' })
   const [updated, setUpdated] = useState(false)
   const { user, msgAlert, match } = props
 
   useEffect(() => {
-    //show request Here
+    // show request Here
     showItem(user, match.params.id)
       .then(res => setItem(res.data.item))
       .then(() => msgAlert({
@@ -36,15 +37,16 @@ const UpdateItem = (props) => {
   const handleSubmit = (event) => {
     event.preventDefault()
 
-    updatedProfile(user, profile, match.params.id)
+    updateItem(user, item, match.params.id)
       .then(() => setUpdated(true))
+      // .then(() => props.history.push('/item-show/' + match.params.id))
       .then(() => msgAlert({
         heading: item.name + 'link updated',
         message: 'update success',
         variant: 'success'
       }))
       .catch(err => msgAlert({
-        heading:'update failed',
+        heading: 'update failed',
         message: 'oh no ' + err.message,
         variant: 'danger'
       }))
