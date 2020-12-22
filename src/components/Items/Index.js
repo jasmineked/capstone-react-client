@@ -41,7 +41,7 @@ class IndexItem extends Component {
       )
     } else if (this.state.itemArray.length === 0) {
       return (
-        ':|'
+        'create item here'
       )
     } else {
       return (
@@ -50,7 +50,7 @@ class IndexItem extends Component {
             <Fragment key={item._id}>
               <h2>{item.name}</h2>
               <p></p>
-              <Link to={`/items/${item._id}`}>See more</Link>
+              <Link to={`/edit-items/${item._id}`}>See more</Link>
             </Fragment>
           ))}
         </div>

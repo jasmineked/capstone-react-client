@@ -4,7 +4,8 @@ import { v4 as uuid } from 'uuid'
 
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
-import Header from './components/Header/Header'
+import Header from './components/Display/Header'
+// import Home from './components/Display/Homepage'
 import SignUp from './components/Auth/SignUp'
 import SignIn from './components/Auth/SignIn'
 import SignOut from './components/Auth/SignOut'
@@ -69,11 +70,14 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/change-password' render={() => (
             <ChangePassword msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/items/' render={() => (
+          <AuthenticatedRoute user={user} path='/create-items/' render={() => (
             <CreateItem msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/items/:id' render={() => (
+          <AuthenticatedRoute user={user} path='/edit-items/:id' render={() => (
             <DestroyItem msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/view-items' render={() => (
+            <IndexItem msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/items' render={() => (
             <IndexItem msgAlert={this.msgAlert} user={user} />

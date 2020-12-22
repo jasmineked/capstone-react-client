@@ -53,11 +53,11 @@ class CreateItem extends Component {
     }
     render () {
       if (this.state.createdId) {
-        return <Redirect to='/home'/>
+        return <Redirect to='/view-items/'/>
       }
       return (
         <React.Fragment>
-          <h1>Add link to item here</h1>
+          <h1>Add link here</h1>
           <Form onSubmit={this.handleSubmit}>
             <input
               placeholder="type here"
