@@ -7,7 +7,6 @@ const authenticatedOptions = (
   <Fragment>
     <NavDropdown title='Settings' id='basic-nav-dropdown'>
       <NavDropdown.Item href='#/change-password'>Change Password</NavDropdown.Item>
-      <NavDropdown.Item href='#/items'>View Items</NavDropdown.Item>
     </NavDropdown>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>
