@@ -5,11 +5,8 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href='#/view-budgets'>Budgets</Nav.Link>
     <NavDropdown title='Settings' id='basic-nav-dropdown'>
       <NavDropdown.Item href='#/change-password'>Change Password</NavDropdown.Item>
-    </NavDropdown>
-      <NavDropdown.Item href='#/create-items'>Add to cart</NavDropdown.Item>
       <NavDropdown.Item href='#/items'>View Items</NavDropdown.Item>
     </NavDropdown>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
