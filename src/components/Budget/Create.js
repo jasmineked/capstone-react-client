@@ -57,7 +57,7 @@ class CreateBudget extends Component {
     }
     render () {
       if (this.state.createdId) {
-        return <Redirect to='/view-budgets'/>
+        return <Redirect to='/index-budgets'/>
       }
       return (
         <React.Fragment>
@@ -78,14 +78,14 @@ class CreateBudget extends Component {
               onChange={this.handleChange}
               name='total'
             />
-            <br></br>
+            {/* <br></br>
             <input
               placeholder='Do you need it now?'
               value={this.state.budget.nowOrLater}
               onChange={this.handleChange}
               name='nowOrLater'
               type='boolean'
-            />
+            /> */}
             <br></br>
             <input
               placeholder='When?'

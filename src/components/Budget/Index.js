@@ -2,7 +2,7 @@ import React, { Component, Fragment } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { indexBudget } from '../../api/budget'
 
-import CreateBudget from '../Budget/Create'
+// import CreateBudget from '../Budget/Create'
 
 class IndexBudget extends Component {
   constructor () {
@@ -42,18 +42,19 @@ class IndexBudget extends Component {
       )
     } else if (this.state.budgetArray.length === 0) {
       return (
-        <CreateBudget />
+        'create a new budget bewlo!'
       )
     } else {
       return (
         <div>
-          <CreateBudget />
           <div>
             {this.state.budgetArray.map(budget => (
               <Fragment key={budget._id}>
-                <h2>{budget.total}</h2>
+                <h2>{budget.name}</h2>
+                <h4>{budget.total}</h4>
+                <h5>{budget.dateDue}</h5>
                 <p></p>
-                <Link to={`/edit-items/${budget._id}`}>Modify</Link>
+                <Link to={`/delete-budgets/${budget._id}`}>Modify</Link>
               </Fragment>
             ))}
           </div>

@@ -53,7 +53,7 @@ class CreateItem extends Component {
     }
     render () {
       if (this.state.createdId) {
-        return <Redirect to='/view-items/'/>
+        return <Redirect to='/index-items/'/>
       }
       return (
         <React.Fragment>
@@ -66,13 +66,6 @@ class CreateItem extends Component {
               value={this.state.item.name}
               onChange={this.handleChange}
               name='name'
-            />
-            <input
-              placeholder='enter desired delay duration'
-              value={this.state.item.delayDuration}
-              onChange={this.handleChange}
-              name='delayDuration'
-              type='date'
             />
             <Button type='submit'>Submit</Button>
           </Form>

@@ -17,6 +17,7 @@ import UpdateItem from './components/Items/Update'
 import CreateBudget from './components/Budget/Create'
 import IndexBudget from './components/Budget/Index'
 import UpdateBudget from './components/Budget/Update'
+import DestroyBudget from './components/Budget/Destroy'
 
 class App extends Component {
   constructor () {
@@ -92,10 +93,19 @@ class App extends Component {
             <CreateBudget msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/view-budgets' render={() => (
+            <CreateBudget msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/view-budgets' render={() => (
             <IndexBudget msgAlert={this.msgAlert} user={user} />
           )} />
-          <AuthenticatedRoute user={user} path='/update-budget/:id' render={() => (
+          <AuthenticatedRoute user={user} path='/index-budgets' render={() => (
+            <IndexBudget msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/update-budgets/:id' render={() => (
             <UpdateBudget msgAlert={this.msgAlert} user={user} />
+          )} />
+          <AuthenticatedRoute user={user} path='/delete-budgets/:id' render={() => (
+            <DestroyBudget msgAlert={this.msgAlert} user={user} />
           )} />
         </main>
       </Fragment>

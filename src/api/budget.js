@@ -42,3 +42,13 @@ export const showBudget = (user, budgetId) => {
     }
   })
 }
+
+export const deleteBudget = (user, budgetId) => {
+  return axios({
+    url: apiUrl + '/budgets/' + budgetId,
+    method: 'DELETE',
+    headers: {
+      'Authorization': `Token token=${user.token}`
+    }
+  })
+}

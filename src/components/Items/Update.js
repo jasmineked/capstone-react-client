@@ -15,7 +15,7 @@ const UpdateItem = (props) => {
     showItem(user, match.params.id)
       .then(res => setItem(res.data.item))
       .then(() => msgAlert({
-        heading: 'See it? Im showing it',
+        heading: 'See it? show',
         message: 'okayyyyyyy',
         variant: 'success'
       }))

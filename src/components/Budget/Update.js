@@ -73,13 +73,13 @@ const UpdateBudget = (props) => {
           onChange={handleChange}
           name='total'
         />
-        <input
+        {/* <input
           placeholder='Do you need it now?'
           value={budget.nowOrLater}
           onChange={handleChange}
           name='nowOrLater'
           type='boolean'
-        />
+        /> */}
         <input
           placeholder='When?'
           value={budget.dueDate}
