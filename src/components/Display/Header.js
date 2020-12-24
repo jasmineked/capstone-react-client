@@ -5,11 +5,10 @@ import NavDropdown from 'react-bootstrap/NavDropdown'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#about">How it works</Nav.Link>
+    <Nav.Link href='#/view-budgets'>Budgets</Nav.Link>
     <NavDropdown title='Settings' id='basic-nav-dropdown'>
       <NavDropdown.Item href='#/change-password'>Change Password</NavDropdown.Item>
     </NavDropdown>
-    <NavDropdown title='Cart' id='basic-nav-dropdown'>
       <NavDropdown.Item href='#/create-items'>Add to cart</NavDropdown.Item>
       <NavDropdown.Item href='#/items'>View Items</NavDropdown.Item>
     </NavDropdown>
@@ -21,6 +20,7 @@ const unauthenticatedOptions = (
   <Fragment>
     <Nav.Link href="#sign-up">Sign Up</Nav.Link>
     <Nav.Link href="#sign-in">Sign In</Nav.Link>
+    <Nav.Link href="#about">About</Nav.Link>
   </Fragment>
 )
 

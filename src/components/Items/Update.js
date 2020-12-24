@@ -39,7 +39,6 @@ const UpdateItem = (props) => {
 
     updateItem(user, item, match.params.id)
       .then(() => setUpdated(true))
-      // .then(() => props.history.push('/item-show/' + match.params.id))
       .then(() => msgAlert({
         heading: item.name + 'link updated',
         message: 'update success',

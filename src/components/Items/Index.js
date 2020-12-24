@@ -3,6 +3,8 @@ import { Link, withRouter } from 'react-router-dom'
 
 import { indexItem } from '../../api/item'
 
+// import CreateItem from './Items/Create'
+
 class IndexItem extends Component {
   constructor () {
     super()
@@ -41,7 +43,8 @@ class IndexItem extends Component {
       )
     } else if (this.state.itemArray.length === 0) {
       return (
-        'create item here'
+        // <CreateItem />
+        'ok'
       )
     } else {
       return (

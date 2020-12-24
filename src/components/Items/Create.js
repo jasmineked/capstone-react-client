@@ -3,15 +3,13 @@ import { withRouter, Redirect } from 'react-router-dom'
 import { createItem } from '../../api/item'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
-// import { TimeDurationInput } from 'react-time-duration-input'
 
 class CreateItem extends Component {
   constructor (props) {
     super(props)
     this.state = {
       item: {
-        name: '',
-        delayDuration: ''
+        name: ''
       },
       createdId: null
     }
@@ -62,6 +60,7 @@ class CreateItem extends Component {
           <h1>Add link(s) here</h1>
           <br></br>
           <Form onSubmit={this.handleSubmit}>
+            <label></label>
             <input
               placeholder="type item link here"
               value={this.state.item.name}
