@@ -1,1 +1,12 @@
 @import '~bootstrap/scss/bootstrap';
+
+.cardsIndex {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.card-body {
+ width: 200px;
+ margin-right: 75px;
+ align-content: center;
+}
