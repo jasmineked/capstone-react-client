@@ -58,7 +58,7 @@ class IndexBudget extends Component {
                   <Card.Body>
                     <Card.Title>{budget.name}</Card.Title>
                     <Card.Subtitle className="mb-2 text-muted">${budget.total}</Card.Subtitle>
-                    <Card.Text>{dateFormat(budget.dueDate, 'dddd, mmmm dS, yyyy')}</Card.Text>
+                    <Card.Text>Due: {dateFormat(budget.dueDate, 'dddd, mmmm dS, yyyy')}</Card.Text>
                     <Card.Link href={`#/delete-budgets/${budget._id}`}>Edit Goal</Card.Link>
                   </Card.Body>
                 </Card>

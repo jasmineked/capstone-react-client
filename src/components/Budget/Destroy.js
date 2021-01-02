@@ -1,9 +1,8 @@
-import React, { useState, useEffect, Fragment } from 'react'
+import React, { useState, useEffect } from 'react'
 import { Link, withRouter } from 'react-router-dom'
 import { showBudget, deleteBudget } from '../../api/budget'
 
 import Button from 'react-bootstrap/Button'
-import Card from 'react-bootstrap/Card'
 
 const DestroyBudget = (props) => {
   const [budget, setBudget] = useState(null)
@@ -39,7 +38,7 @@ const DestroyBudget = (props) => {
           variant: 'success'
         })
       })
-      .then(() => history.push('/budgets'))
+      .then(() => history.push('/view-budgets/'))
       .catch(err => {
         msgAlert({
           heading: 'fail tdelete',
@@ -53,20 +52,8 @@ const DestroyBudget = (props) => {
     <div>
       {budget ? (
         <div>
-          <div className='cardsShow'>
-            <Fragment key={budget._id}>
-              <Card style={{ width: '250px', margin: '10px', height: '150px' }}>
-                <Card.Body>
-                  <Card.Title>{budget.name}</Card.Title>
-                  <Card.Subtitle className="mb-2 text-muted">${budget.total}</Card.Subtitle>
-                  <Card.Text>
-                    {budget.dueDate}</Card.Text>
-
-                </Card.Body>
-              </Card>
-            </Fragment>
-          </div>
-          <Button onClick={handleDelete} delete>delete</Button>
+          <h2>{budget.name}</h2>
+          <Button onClick={handleDelete}delete>delete</Button>
           <Link to={'/update-budgets/' + budget._id}>Update Budget</Link>
         </div>
       ) : 'Loading...please...please wait'
