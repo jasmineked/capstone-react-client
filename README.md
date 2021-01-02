@@ -1,6 +1,6 @@
 Technologies Used:
 
-react
+mern
 coolors
 upsplash
-Klarna API
+
