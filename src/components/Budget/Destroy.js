@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 import { showBudget, deleteBudget } from '../../api/budget'
-
+import dateFormat from 'dateformat'
 import Button from 'react-bootstrap/Button'
 
 const DestroyBudget = (props) => {
@@ -52,9 +52,14 @@ const DestroyBudget = (props) => {
     <div>
       {budget ? (
         <div>
-          <h2>{budget.name}</h2>
-          <Button onClick={handleDelete}delete>delete</Button>
-          <Link to={'/update-budgets/' + budget._id}>Update Budget</Link>
+          <h5>{budget.name}</h5>
+          <h5>${budget.total}</h5>
+          <h5>Save by: {dateFormat(budget.dueDate, 'dddd, mmmm dS yyyy')}</h5>
+          <h5>time left:</h5>
+          <h5>total time: </h5>
+          <Button onClick={handleDelete}delete>Delete</Button>{' '}
+          <br></br>
+          <Button href={'#/update-budgets/' + budget._id}>Update</Button>
         </div>
       ) : 'Loading...please...please wait'
       }
