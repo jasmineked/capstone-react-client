@@ -20,7 +20,7 @@ class IndexBudget extends Component {
 
     indexBudget(user)
       .then(res => {
-        console.log(res)
+        // console.log(res)
         this.setState({ budgetArray: res.data.budgets })
       })
       .then(() => {
