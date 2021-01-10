@@ -58,35 +58,44 @@ const UpdateBudget = (props) => {
 
   return (
     <React.Fragment>
-      <h1>Update Budget</h1>
-      <Form onSubmit={handleSubmit}>
-        <label>What are you saving for?</label>
-        <input
-          placeholder="New home? Vacation?"
-          value={budget.name}
-          onChange={handleChange}
-          name='name'
-        />
-        <input
-          placeholder='How much do you need?'
-          value={budget.total}
-          onChange={handleChange}
-          name='total'
-        />
+      <h5>Update budget</h5>
+      <br></br>
+      <Form onSubmit={handleSubmit}
+        className='updateBudgetForm'>
+        <Form.Group controlId="budgetNameForm">
+          <Form.Label>What are you saving for?</Form.Label>
+          <Form.Control
+            placeholder="New home? Vacation?"
+            value={budget.name}
+            onChange={handleChange}
+            name='name'
+          />
+        </Form.Group>
+        <Form.Group controlId='budgetTotalForm'>
+          <Form.Label>How much do you need?</Form.Label>
+          <Form.Control placeholder='$'
+            value={budget.total}
+            onChange={handleChange}
+            name='total'
+          />
+        </Form.Group>
         {/* <input
-          placeholder='Do you need it now?'
+          placeholder='Do you neeSd it now?'
           value={budget.nowOrLater}
           onChange={handleChange}
           name='nowOrLater'
           type='boolean'
         /> */}
-        <input
-          placeholder='When?'
-          value={budget.dueDate}
-          onChange={handleChange}
-          name='dueDate'
-          type='date'
-        />
+        <Form.Group controlId='budgetDueDate'>
+          <Form.Label>When do you need it by?</Form.Label>
+          <Form.Control
+            placeholder='When?'
+            value={budget.dueDate}
+            onChange={handleChange}
+            name='dueDate'
+            type='date'
+          />
+        </Form.Group>
         <Button type='submit'>Submit</Button>
       </Form>
     </React.Fragment>
