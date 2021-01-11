@@ -40,13 +40,12 @@ const UpdateBudget = (props) => {
     updateBudget(user, budget, match.params.id)
       .then(() => setUpdated(true))
       .then(() => msgAlert({
-        heading: budget.name + ' budget updated',
-        message: 'update success',
+        heading: budget.name + ' budget updated successfully.',
         variant: 'success'
       }))
       .catch(err => msgAlert({
-        heading: 'update failed',
-        message: 'oh no ' + err.message,
+        heading: 'Failed to update ' + budget.name,
+        message: 'Error: ' + err.message,
         variant: 'danger'
       }))
   }
@@ -87,7 +86,7 @@ const UpdateBudget = (props) => {
           type='boolean'
         /> */}
         <Form.Group controlId='budgetDueDate'>
-          <Form.Label>When do you need it by?</Form.Label>
+          <Form.Label>When do you need it?</Form.Label>
           <Form.Control
             placeholder='When?'
             value={budget.dueDate}
