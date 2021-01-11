@@ -1,12 +1,16 @@
 import React, { Fragment } from 'react'
-import Nav from 'react-bootstrap/Nav'
-import Navbar from 'react-bootstrap/Navbar'
-// import NavDropdown from 'react-bootstrap/NavDropdown'
+import { Nav, Navbar, NavDropdown } from 'react-bootstrap'
 
 const authenticatedOptions = (
   <Fragment>
-    <Nav.Link href="#change-password">Settings</Nav.Link>
-    <Nav.Link href='#view-budgets'>budget</Nav.Link>
+    {/* <Nav.Link href="#/transactions">Plaid</Nav.Link> */}
+    <NavDropdown title= 'Budget' id='budget-dropwdown'>
+      <NavDropdown.Item href='#/budgets'>Create new</NavDropdown.Item>
+      <NavDropdown.Item href='#/view-budgets'>View all</NavDropdown.Item>
+    </NavDropdown>
+    <NavDropdown title= 'Settings' id='settings-dropdown'>
+      <NavDropdown.Item href='#/change-password'>Change Password</NavDropdown.Item>
+    </NavDropdown>
     <Nav.Link href="#sign-out">Sign Out</Nav.Link>
   </Fragment>
 )
@@ -25,14 +29,14 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-  <Navbar bg="dark" variant="dark" expand="md">
+  <Navbar className='navColor' variant='light' expand="md">
     <Navbar.Brand href="#">
       capstone
     </Navbar.Brand>
     <Navbar.Toggle aria-controls="basic-navbar-nav" />
     <Navbar.Collapse id="basic-navbar-nav">
       <Nav className="ml-auto">
-        { user && <span className="navbar-text mr-2">Welcome, {user.email}</span>}
+        { user && <span className="navbar-text mr-2">Signed in as: {user.email}</span>}
         { alwaysOptions }
         { user ? authenticatedOptions : unauthenticatedOptions }
       </Nav>
