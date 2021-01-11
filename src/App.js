@@ -5,7 +5,7 @@ import { v4 as uuid } from 'uuid'
 import AuthenticatedRoute from './components/AuthenticatedRoute/AuthenticatedRoute'
 import AutoDismissAlert from './components/AutoDismissAlert/AutoDismissAlert'
 import Header from './components/Display/Header'
-// import Home from './components/Display/Homepage'
+// import LinkHandler from './components/Plaid/LinkHandler'
 import SignUp from './components/Auth/SignUp'
 import SignIn from './components/Auth/SignIn'
 import SignOut from './components/Auth/SignOut'
@@ -93,12 +93,6 @@ class App extends Component {
             <CreateBudget msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/view-budgets' render={() => (
-            <CreateBudget msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/view-budgets' render={() => (
-            <IndexBudget msgAlert={this.msgAlert} user={user} />
-          )} />
-          <AuthenticatedRoute user={user} path='/index-budgets' render={() => (
             <IndexBudget msgAlert={this.msgAlert} user={user} />
           )} />
           <AuthenticatedRoute user={user} path='/update-budgets/:id' render={() => (
@@ -107,6 +101,10 @@ class App extends Component {
           <AuthenticatedRoute user={user} path='/delete-budgets/:id' render={() => (
             <DestroyBudget msgAlert={this.msgAlert} user={user} />
           )} />
+          {/* <AuthenticatedRoute user={user} path='/transactions' render={
+            () => (
+              <LinkHandler msgAlert={this.msgAlert} user={user} />
+            )} /> */}
         </main>
       </Fragment>
     )
