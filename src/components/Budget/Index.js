@@ -62,6 +62,7 @@ class IndexBudget extends Component {
                 </Card>
               </Fragment>
             ))}
+            <br></br>
           </div>
           <Link to={'/budgets/'}>Create new budget here.</Link>
           <br></br>
