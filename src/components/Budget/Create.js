@@ -42,14 +42,14 @@ class CreateBudget extends Component {
       })
       .then(() => {
         msgAlert({
-          heading: 'Budget created successfully!',
+          heading: 'Budget created successfully.',
           message: 'Better sooner than later',
           variant: 'success'
         })
       })
       .catch((err) => {
         msgAlert({
-          heading: 'BUdget creation failed, try again!',
+          heading: 'Budget creation failed, try again.',
           message: 'Try again. Error: ' + err.message,
           variant: 'danger'
         })
@@ -57,7 +57,7 @@ class CreateBudget extends Component {
   }
   render () {
     if (this.state.createdId) {
-      return <Redirect to='/index-budgets' />
+      return <Redirect to='/view-budgets' />
     }
     return (
       <React.Fragment>
@@ -72,7 +72,6 @@ class CreateBudget extends Component {
               name='name'
             />
           </Form.Group>
-
           <Form.Group controlId="budgetTotalForm">
             <Form.Label>How much do you need?</Form.Label>
             <Form.Control placeholder="$"

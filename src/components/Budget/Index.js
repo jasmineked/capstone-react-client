@@ -1,10 +1,9 @@
 import React, { Component, Fragment } from 'react'
-import { withRouter } from 'react-router-dom'
+import { Link, withRouter } from 'react-router-dom'
 import { indexBudget } from '../../api/budget'
+// import LinkHandler from '../Plaid/LinkHandler'
 import Card from 'react-bootstrap/Card'
 import dateFormat from 'dateformat'
-
-// import Link from 'react-bootstrap/Link'
 
 // import CreateBudget from '../Budget/Create'
 
@@ -25,15 +24,14 @@ class IndexBudget extends Component {
       })
       .then(() => {
         msgAlert({
-          heading: 'Look at em!',
-          message: 'yay!',
+          heading: 'Indexed Budgets successfully',
           variant: 'success'
         })
       })
       .catch(err => {
         msgAlert({
-          heading: 'Index Failed :(',
-          message: 'error: ' + err.message,
+          heading: 'Failed to index budgets',
+          message: 'Error: ' + err.message,
           variant: 'danger'
         })
       })
@@ -42,11 +40,11 @@ class IndexBudget extends Component {
   render () {
     if (!this.state.budgetArray) {
       return (
-        'is this loading, tf'
+        'loading'
       )
     } else if (this.state.budgetArray.length === 0) {
       return (
-        'create a new budget bewlo!'
+        <Link to={'/budgets/'}>Create new budget here.</Link>
       )
     } else {
       return (
@@ -65,6 +63,9 @@ class IndexBudget extends Component {
               </Fragment>
             ))}
           </div>
+          <Link to={'/budgets/'}>Create new budget here.</Link>
+          <br></br>
+          <Link to={'/transactions'}>Connect with Plaid.</Link>
         </div>
       )
     }

@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react'
 import { withRouter } from 'react-router-dom'
 import { showBudget, deleteBudget } from '../../api/budget'
 import dateFormat from 'dateformat'
-import Button from 'react-bootstrap/Button'
+import { Button } from 'react-bootstrap'
+// import duration from 'duration'
 
 const DestroyBudget = (props) => {
   const [budget, setBudget] = useState(null)
@@ -15,14 +16,13 @@ const DestroyBudget = (props) => {
       })
       .then(() => {
         msgAlert({
-          heading: 'oooooh ur budget is showing!ol',
-          message: 'k.',
+          heading: 'Budget displayed successfully.',
           variant: 'success'
         })
       })
       .catch(err => {
         msgAlert({
-          heading: 'Show Budget Failed BOOO',
+          heading: 'Budget failed to show. Try again.',
           message: 'Error: ' + err.message,
           variant: 'danger'
         })
@@ -33,16 +33,15 @@ const DestroyBudget = (props) => {
     deleteBudget(user, match.params.id)
       .then(() => {
         msgAlert({
-          heading: 'deleted',
-          message: 'yes',
+          heading: 'Budget deleted succesfully.',
           variant: 'success'
         })
       })
       .then(() => history.push('/view-budgets/'))
       .catch(err => {
         msgAlert({
-          heading: 'fail tdelete',
-          message: '..' + err.message,
+          heading: 'Failed to delete budget. Try again.',
+          message: 'Error: ' + err.message,
           variant: 'danger'
         })
       })
@@ -55,10 +54,8 @@ const DestroyBudget = (props) => {
           <h5>{budget.name}</h5>
           <h5>${budget.total}</h5>
           <h5>Save by: {dateFormat(budget.dueDate, 'dddd, mmmm dS yyyy')}</h5>
-          <h5>time left:</h5>
-          <h5>total time: </h5>
+          <h5>Created on: {dateFormat(budget.timestamps, 'dddd, mmmm dS yyyy')}</h5>
           <Button onClick={handleDelete}delete>Delete</Button>{' '}
-          <br></br>
           <Button href={'#/update-budgets/' + budget._id}>Update</Button>
         </div>
       ) : 'Loading...please...please wait'
